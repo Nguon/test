@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: khqr-invoice-postpaid
+  namespace: business-logic-layer
+  labels:
+    app: khqr-invoice-postpaid
+    version: 0.0.1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: khqr-invoice-postpaid
+  template:
+    metadata:
+      labels:
+        app: khqr-invoice-postpaid
+    spec:
+      containers:
+      - name: khqr-invoice-postpaid
+        image: cellcardkh/khqrinvoicepostpaid:prod-0.1.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9910
+        #volumeMounts:
+        #- mountPath: /app/logs
+        #  name: app-log
+        env:
+        - name: TZ
+          value: "Asia/Phnom_Penh"
+        - name: ENV
+          value: "prod"
+      imagePullSecrets:
+      - name: business-logic-layer
+      #volumes:
+      #- name: app-log
+      #  hostPath:
+      #    path: /var/log/springboot-app/commercial/transaction_history/
+      #    type: DirectoryOrCreate
