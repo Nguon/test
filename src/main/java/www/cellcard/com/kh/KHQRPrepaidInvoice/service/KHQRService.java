@@ -87,9 +87,7 @@ public class KHQRService {
                 .bodyValue(json.toString())
                 .exchangeToMono(cr -> cr.bodyToMono(String.class))
                 .timeout(Duration.ofMillis(300000)).block();
-            System.out.println(res);
-            System.out.println(baseUrl+"/identity/login");
-            System.out.println(json.toString());
+      
             json = new JSONObject(res);
             if(json.has("body") && json.getJSONObject("body").has("access_token")){
                 redis.opsForValue().set(redisKey, json.getJSONObject("body").getString("access_token"));

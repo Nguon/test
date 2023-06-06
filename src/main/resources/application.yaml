@@ -21,7 +21,8 @@ client_secret: "QhSNJNIjvVKHmEoSCX5qpz0AG1pzkyGP3jgzIC9r99UU5Xtadq2oaO1zhRrSsAb0
 crc-salt: $2a$05$m3RX2lLwe9IoFqvwTh53e.p.UcdyLYstudb.9Hqa4uz0iqRH8h6xi
 
 base-url: https://demo-eco-gateway.wingmarket.com
-
+base-cellcard-url: https://stg-api.cellcard.com.kh:8243
+cellcard-key: cellcard:10ee267dMB0uztiSfSyU/261by2iwV8Ge93aa42148a1fcf526x/9SwedIBZIMsbhQ
 
 
 
