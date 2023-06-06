@@ -45,8 +45,7 @@ public class controller {
     String baseUrl;
     @Value("${base-cellcard-url}")
     String baseCellcardUrl;
-    @Value("${cellcard-key}")
-    String key;
+ 
     @Value("${crc-salt}")
     String crcKey;
     @Value("${redis-key}")
@@ -315,13 +314,14 @@ public class controller {
 				+ "    \"callback_auth_grant_type\": \"client_credentials\",\r\n"
 				+ "    \"callback_auth_data_option\": \"HEADER\"\r\n"
 				+ "}";
-        String encrypted = AESUtils.encrypt(data, key);
-        String gatewaySetting = "{\r\n"
+        String encrypted = AESUtils.encrypt(data, crcKey);
+        String gatewaySettingString = "{\r\n"
         + "    \"callback_url\": \""+baseCellcardUrl+"/wingbillpayment/v1/pay/%s\",\r\n"
         + "    \"callback_auth_type\": \"OAUTH\",\r\n"
         + "    \"callback_auth_data\": \"%s\"\r\n"
         + "}";
-        json.put("gateway_setting", gatewaySetting.formatted(accountId,encrypted));
+        JSONObject gatewaySetting = new JSONObject(gatewaySettingString.formatted(accountId,encrypted));
+        json.put("gateway_setting", gatewaySetting);
         String orderReferenceNo = json.getString("order_reference_no");
         String currency = json.getString("currency");
         double total = json.getDouble("total");
@@ -329,7 +329,7 @@ public class controller {
         String resultMsg="";
         boolean result = false;
         json.put("crc", generateCRC(orderReferenceNo+"|"+currency+"|"+formatNumber(String.valueOf(total),"#.00")));
-        
+      
        
         LogFormatter logFormatter = new LogFormatter();
         HashMap<String,String> hmLog  = new HashMap<>();
@@ -340,7 +340,7 @@ public class controller {
         hmLog.put(LogFormatterKeys.request_plan.getKey(), "");
         hmLog.put(LogFormatterKeys.account_id.getKey(), "");
         hmLog.put(LogFormatterKeys.error_code.getKey(), "");
-        hmLog.put(LogFormatterKeys.error_message.getKey(), requestBody);
+        hmLog.put(LogFormatterKeys.error_message.getKey(), json.toString());
         hmLog.put(LogFormatterKeys.client_ip.getKey(), "");
         hmLog.put(LogFormatterKeys.uuid.getKey(), "");
         hmLog.put(LogFormatterKeys.action.getKey(), "request");
