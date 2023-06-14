@@ -316,7 +316,7 @@ public class controller {
 				+ "}";
         String encrypted = AESUtils.encrypt(data, crcKey);
         String gatewaySettingString = "{\r\n"
-        + "    \"callback_url\": \""+baseCellcardUrl+"/wingbillpayment/v1/pay/%s\",\r\n"
+        + "    \"callback_url\": \""+baseCellcardUrl+"/bill-payment/v1/pay/%s\",\r\n"
         + "    \"callback_auth_type\": \"OAUTH\",\r\n"
         + "    \"callback_auth_data\": \"%s\"\r\n"
         + "}";
