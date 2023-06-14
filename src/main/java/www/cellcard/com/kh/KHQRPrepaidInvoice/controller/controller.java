@@ -306,7 +306,7 @@ public class controller {
     public ResponseEntity<?> createInvoice(@RequestBody String requestBody) throws Exception{
         
         JSONObject json = new JSONObject(requestBody);
-        String accountId = json.getJSONObject("customer").optString("phone","");
+        String accountId = json.getJSONObject("customer").getJSONObject("payload").optString("customer_id","");
         String data = "{\r\n"
 				+ "    \"callback_auth_url\": \""+baseCellcardUrl+"/token\",\r\n"
 				+ "    \"callback_auth_user\": \"5CKuH1H7c56_6YFDacLBKFIyiQEa\",\r\n"
