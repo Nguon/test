@@ -89,7 +89,7 @@ public class controller {
             resultCode = response.optString("result_code","field result_code is empty");
             if(resultCode.equalsIgnoreCase("A403")|| resultCode.equalsIgnoreCase("A402")){
                 redis.delete(redisKey);
-                res = service.Callback(baseUrl+"/invoicing/api/invoice/find-by-id/"+id, "", service.getToken());
+                res = service.CallbackGet(baseUrl+"/invoicing/api/invoice/find-by-id/"+id, "", service.getToken());
             }
         }
         if(response.has("result_message")){
@@ -143,12 +143,12 @@ public class controller {
         boolean result = false;
         String res = service.CallbackGet(baseUrl+"/invoicing/api/invoice/find-by-order-reference-no/"+id, "", service.getToken());
         JSONObject response  = new JSONObject(res);
-
+       
         if(response.has("result_code")){
             resultCode = response.optString("result_code","field result_code is empty");
             if(resultCode.equalsIgnoreCase("A403")|| resultCode.equalsIgnoreCase("A402")){
                 redis.delete(redisKey);
-                res = service.Callback(baseUrl+"/invoicing/api/invoice/find-by-order-reference-no/"+id, "", service.getToken());
+                res = service.CallbackGet(baseUrl+"/invoicing/api/invoice/find-by-order-reference-no/"+id, "", service.getToken());
             }
         }
         if(response.has("result")){

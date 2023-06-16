@@ -89,6 +89,7 @@ public class KHQRService {
                 .timeout(Duration.ofMillis(300000)).block();
       
             json = new JSONObject(res);
+           
             if(json.has("body") && json.getJSONObject("body").has("access_token")){
                 redis.opsForValue().set(redisKey, json.getJSONObject("body").getString("access_token"));
                 redis.expire(redisKey, json.getJSONObject("body").getInt("expires_in")-10, TimeUnit.SECONDS);
