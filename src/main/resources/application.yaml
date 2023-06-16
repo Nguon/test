@@ -4,10 +4,10 @@ spring:
   lifecycle: 
     timeout-per-shutdown-phase: 1s
   redis:
-    host: 172.16.101.164
-    port: 32075
-    # host: redis-master-0.redis-headless.redis-clusters.svc.cluster.local
-    # port: 6379
+    # host: 172.16.101.164
+    # port: 32075
+    host: redis-master-0.redis-headless.redis-clusters.svc.cluster.local
+    port: 6379
     password: UOWMh5uVKi
     timeout: 30000
 redis-key: KHQRINOVICETOKEN
