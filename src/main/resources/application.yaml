@@ -4,24 +4,25 @@ spring:
   lifecycle: 
     timeout-per-shutdown-phase: 1s
   redis:
-    host: 172.16.101.164
-    port: 32075
-    # host: redis-master-0.redis-headless.redis-clusters.svc.cluster.local
-    # port: 6379
+    # host: 172.16.101.164
+    # port: 32075
+    host: redis-master-0.redis-headless.redis-clusters.svc.cluster.local
+    port: 6379
     password: UOWMh5uVKi
     timeout: 30000
 redis-key: KHQRINOVICETOKEN
 #configuration to generate token
-user: "077771125"
-password: "XjKOQ596gvx/9SwedIBZIMsbhQSBb8HGHhE09wHjAva056f9z4RIqGRrO3sv4haMB0uztiSfSyU/261by2iwV8GeIB7ekCRD4Et9SQYia8SxeDerELWlOhIQOwwJBcSfpNA4kECW7ubzOPv+g5RBJ8ba4YLGsoMxnVKGEaKs14fatHn+qlnpauIhhN2rxiuxPmZhWYjGfe2J+Ep+IO52zcFFy2Bl1x6ujIxtkrU3Ia48f+NRAUBdz15jZr3QB7okGkfeft2qHRianhNOzcLAfnw2jYdSRRcrnejl8MzVJFWRXYuDTnBfQ76Pk1Z+7JcXHOT2Asa18T2Px3RuwrNKmQ=="
+user: "04868503"
+password: "CbM+lHTuQ6EmncSGKN7Wq+zpzLiDUzSFtTAiHHhRTuNCG+XSYYgI6EIzL6rcG2CSd48rlwvftbWfoGtWMRXhaah0HyIIxdp5A14V3nEzZP4fTrOqr1LaDtFIfzc1IHd7t5ehBYVsROpyLuie4BqjwC3wJME5NIcqupt/docn/vnahSLpV/eFwdi48PNVGJJPiHsmxyUYRNdNzMtSyCQd0ziCe3PqD9gADEawxqmlYo0FB3UZopaARHQPPIvTAURhVvAzC5sviSWRewQx80DZh/YSfCne3JWiD7y+ZXP66imuANXlMW+wgzw5u2qPmC6R1WtjOhmc266kVudgox3Vqg=="
 grant_type: "password"
-client_id: "invoicing_png"
-client_secret: "QhSNJNIjvVKHmEoSCX5qpz0AG1pzkyGP3jgzIC9r99UU5Xtadq2oaO1zhRrSsAb0pMPWX+tLK1MAgmp5JEIcceXLu2qsPgW5dyxOUOXxrxdGyYsuOegF0o7dzlkEUbRr3B3xTO5LsKVHi9R1TOkV+jlXVPxCLMAaUJ8/zmChq9Hsd1kBFCjLcL3oXE7gu2KlsVnGlQLEiJRZWQaBkhMiC8EbA59MT9/owuybu6q/c6LTTgQgyDdC3PA2gmblo7JrZtEgrj5IlM+rIUhPMV+i8k9L2SBTfMW69AQAcpbkwmaorjA0+bPTNLdJVevV/w/ZZv6Hs45Ooddikx4GGQ4OIg=="
+client_id: "cellcard"
+client_secret: " XdSIyos00xjhvp+IyikonxryyV5PNMhmL3pu+hnVL8IW0OTVjOWoCsGe8niz4qvp6/kyEYeWJ2y9kQsqtT35SE38ep7AYXkXL/JZW1ek5J+MAngM8cPrfRu/ygFcSJi166VB83WU2HyBEmv6vgYsLzG02wB6IlirA9iqg1Iv8oQHBcG5LjCQCuOTDkux3kFsiffEkf36tMYFxLwP4GEBE7PrLbPE8mTy0XEXwaOV/gKqm2JrE7VagS8v3s7yo9OTpaxv7LQW4W+qylW5NI8rrKksHwSC3n5n939GF+5b+mIC+CN1u70L4bo7FkfTSgkALwCSih8AFUDFfQrGpITo4w=="
 
-crc-salt: $2a$05$m3RX2lLwe9IoFqvwTh53e.p.UcdyLYstudb.9Hqa4uz0iqRH8h6xi
+crc-salt:  $2a$10$jttFGPgB8AcJydXyl9fNXuMfACIpkavqQTzageCuc07BIatIReYe.
 
-base-url: https://demo-eco-gateway.wingmarket.com
-base-cellcard-url: https://stg-api.cellcard.com.kh:8243
+base-url: https://eco‐gateway.wingmarket.com
+base-cellcard-url: https://prd-api.cellcard.com.kh:8243
 
 
 
+ 

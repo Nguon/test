@@ -309,8 +309,8 @@ public class controller {
         String accountId = json.getJSONObject("customer").getJSONObject("payload").optString("customer_id","");
         String data = "{\r\n"
 				+ "    \"callback_auth_url\": \""+baseCellcardUrl+"/token\",\r\n"
-				+ "    \"callback_auth_user\": \"_GAFc3FM7Or88T1YEM3J8vKeFs0a\",\r\n"
-				+ "    \"callback_auth_password\": \"atrRTBBkRuXPnAmLTZaCOPkTOdsa\",\r\n"
+				+ "    \"callback_auth_user\": \"gwAmHWB8bZl7P3eGdSfRlWa6Qqsa\",\r\n"
+				+ "    \"callback_auth_password\": \"QgBxwWkBAmgfbnbTNWHi5Uy6YGIa\",\r\n"
 				+ "    \"callback_auth_grant_type\": \"client_credentials\",\r\n"
 				+ "    \"callback_auth_data_option\": \"HEADER\"\r\n"
 				+ "}";

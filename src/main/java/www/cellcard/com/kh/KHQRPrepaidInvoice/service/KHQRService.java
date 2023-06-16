@@ -82,7 +82,7 @@ public class KHQRService {
             WebClient webClientBuilder = WebClient.builder().build();
             String res = webClientBuilder
                 .post()
-                .uri(baseUrl+"/identity/login")
+                .uri(baseUrl+"/v2/identity/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(json.toString())
                 .exchangeToMono(cr -> cr.bodyToMono(String.class))
