@@ -20,9 +20,5 @@ client_secret: " XdSIyos00xjhvp+IyikonxryyV5PNMhmL3pu+hnVL8IW0OTVjOWoCsGe8niz4qv
 
 crc-salt:  $2a$10$jttFGPgB8AcJydXyl9fNXuMfACIpkavqQTzageCuc07BIatIReYe.
 
-base-url: https://eco‐gateway.wingmarket.com
+base-url: https://eco-gateway.wingmarket.com
 base-cellcard-url: https://prd-api.cellcard.com.kh:8243
-
-
-
- 
