@@ -328,7 +328,7 @@ public class controller {
         String resultCode="";
         String resultMsg="";
         boolean result = false;
-        json.put("crc", generateCRC(orderReferenceNo+"|"+currency+"|"+formatNumber(String.valueOf(total),"#.00")));
+        json.put("crc", generateCRC(orderReferenceNo+"|"+currency+"|"+formatNumber(String.valueOf(total),"0.00")));
       
        
         LogFormatter logFormatter = new LogFormatter();
